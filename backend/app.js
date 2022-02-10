@@ -2,8 +2,9 @@ const express = require('express');
 
 const app = express();
 
+app.use(express.json());
 
-app.use('/frontend/Web-Developer-P6-master/index.html',(req, res, next) =>{
+app.post('/api/auth/signup',(req, res, next) =>{
 
 })
 //----------------------------
