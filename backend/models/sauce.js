@@ -1,9 +1,13 @@
 const mongoose = require('mongoose');
 
 const sauceSchema = mongoose.Schema({
-    sauce: {type: String, required: true},
-    image: { type: String, required: true}
+    name: {type: String, require: true},
+    manufacturer: {type: String},
+    description: {type: String},
+    image: { type: String},
+    mainPepper: { type: String},
+    heat: {type: Number}
   });
 
 
-module.exports = mongoose.model('Sauce', sauceSchema);
+module.exports = mongoose.model('Sauces', sauceSchema);
