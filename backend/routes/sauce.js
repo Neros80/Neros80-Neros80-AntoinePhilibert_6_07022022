@@ -8,8 +8,8 @@ const like = require('../controllers/like');
 
 
 
-router.get('/:id', auth, multer, sauceCtrl.showOneSauce);
-router.get('/', auth, multer, sauceCtrl.showSauces);
+router.get('/:id', auth, sauceCtrl.showOneSauce);
+router.get('/', auth, sauceCtrl.showSauces);
 router.post('/', auth, multer, sauceCtrl.createThing);
 router.put('/:id', auth, multer, sauceCtrl.modifySauce);
 router.delete('/:id', auth, multer,sauceCtrl.deleteSauce);
