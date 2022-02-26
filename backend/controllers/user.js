@@ -1,9 +1,9 @@
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');//permet le hashage du mots de passe
 const jwt = require('jsonwebtoken');
 
 const User = require('../models/user');
 
-
+//enregistrement d'un nouveau compte
 exports.signup = (req, res, next) => {
     bcrypt.hash(req.body.password, 10)
     .then(hash => {
@@ -12,7 +12,6 @@ exports.signup = (req, res, next) => {
             password: hash
             
         });
-        console.log('coucou');
         user.save()
         .then(() => res.status(200).json({ message: 'Utilisateur crée !'}))
         .catch( error => res.status(400).json({ error }));
@@ -20,6 +19,7 @@ exports.signup = (req, res, next) => {
     .catch( error => res.status(500).json({ error }));
 };
 
+//connection à un compte déja crée
 exports.login = (req, res, next) => {
     User.findOne({ email: req.body.email })
       .then(user => {
@@ -35,7 +35,7 @@ exports.login = (req, res, next) => {
               userId: user._id,
               token: jwt.sign(
                 { userId: user._id },
-                'RANDOM_TOKEN_SECRET',
+                'RANDOM_TOKEN_SECRET',//clé de crypatge du mot de passe
                 { expiresIn: '24h' }
               )
             });

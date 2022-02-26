@@ -1,13 +1,13 @@
 const express = require('express');
 
 const app = express();
-const mongoose = require('mongoose');
-const userRoutes = require('./routes/user')
-const sauceRoutes = require('./routes/sauce');
+const mongoose = require('mongoose');//Connection à Mongoose
+const userRoutes = require('./routes/user')//liens vers la route user  
+const sauceRoutes = require('./routes/sauce');//liens vers la route Sauce  
 const path = require('path')
 
 
-
+//connection a l'user de mangoose avec un message qui préçise si la connection et reussie ou non
 mongoose.connect('mongodb+srv://Antoine:Rap80afh62@cluster0.hnxkk.mongodb.net/myFirstDatabase',
   { useNewUrlParser: true,
     useUnifiedTopology: true })

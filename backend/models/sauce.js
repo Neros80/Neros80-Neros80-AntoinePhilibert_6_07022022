@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+
+//schema mangoose création d'une nouvelle sauces
 const sauceSchema = mongoose.Schema({
     name: {type: String, required: true },
     manufacturer: {type: String, required: true },
@@ -12,8 +14,8 @@ const sauceSchema = mongoose.Schema({
     //like & dislike
     likes: { type: Number, default: 0},
     dislikes: { type: Number, default: 0},
-    userLiked: { type: [String] },
-    userDisliked: { type: [String] }
+    usersLiked: { type: [String] },
+    usersDisliked: { type: [String] }
   });
 
 
