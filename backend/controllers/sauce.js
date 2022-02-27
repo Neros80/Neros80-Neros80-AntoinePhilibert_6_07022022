@@ -1,6 +1,8 @@
 const Sauce = require('../models/sauce');
 const fs = require('fs');
 
+
+//Création d'une nouvelle sauce
 exports.createThing = (req, res, next) => {
     const sauceObject = JSON.parse(req.body.sauce);
 
@@ -14,6 +16,7 @@ exports.createThing = (req, res, next) => {
         .catch(error => res.status(400).json({ error }));
 };
 
+//afficher une sauce
 exports.showOneSauce = (req, res, next) => {
     Sauce.findOne({ _id: req.params.id })
         .then(sauce => {
@@ -23,7 +26,7 @@ exports.showOneSauce = (req, res, next) => {
         .catch(error => res.status(400).json({ error }));
 };
 
-
+//afficher toutes les sauce
 exports.showSauces = (req, res, next) => {
     Sauce.find()
         .then(sauces => res.status(200).json(sauces))
@@ -32,7 +35,7 @@ exports.showSauces = (req, res, next) => {
 
 
 
-
+//modification d'une sauce
 exports.modifySauce = (req, res, next) => {
     Sauce.findOne({ _id: req.params.id })
     .then(thing => {
@@ -54,6 +57,7 @@ exports.modifySauce = (req, res, next) => {
         .catch(error => res.status(400).json({ error }));
 };
 
+//suppression d'une sauce
 exports.deleteSauce = (req, res, next) => {
     Sauce.findOne({ _id: req.params.id })
         .then(thing => {
