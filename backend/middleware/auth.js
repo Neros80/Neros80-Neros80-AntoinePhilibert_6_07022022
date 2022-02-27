@@ -1,6 +1,6 @@
 //fichier d'autentification
 
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');//connection a Json web token
 
 
 module.exports = (req, res, next) => {
