@@ -17,7 +17,7 @@ mongoose.connect('mongodb+srv://Antoine:Rap80afh62@cluster0.hnxkk.mongodb.net/my
 app.use(express.json());
 
 //----------------------------
-//aide contre les erreur CORS
+//aide contre les erreur CORS 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
