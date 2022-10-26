@@ -1,5 +1,3 @@
-# TheHottestReviews
-
 # Description
 
 Projet numéro 6 OpenClassroom
